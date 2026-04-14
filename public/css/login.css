@@ -1,0 +1,45 @@
+body {
+    background-image: url("../images/bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    background-color: rgba(0, 0, 0, 0.35);
+    z-index: 0;
+}
+
+.card {
+    position: relative;
+    z-index: 1;
+    background-color: #fff;
+}
+
+.input-underline {
+    border: none !important;
+    border-bottom: 2px solid #aaa !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+}
+
+.input-underline:focus {
+    border-bottom: 2px solid #dc3545 !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+}
+
+.form-floating > .input-underline ~ label {
+    background-color: transparent !important;
+}
+
+.input-underline.is-invalid {
+    background-image: none !important;
+}
