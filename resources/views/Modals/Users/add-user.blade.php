@@ -9,13 +9,13 @@
             <div class="modal-body">
                 <form method="POST" action="{{ route('users.store') }}">
                     @csrf
-                    <div class="d-flex flex-row gap-3">
-                        <div class="form-floating mb-3">
+                    <div class="d-flex flex-column flex-md-row mb-3 gap-3">
+                        <div class="form-floating">
                             <input type="text" class="form-control input-underline" id="modal-name" name="name"
                                 placeholder="Full Name" required>
                             <label for="name">Full Name</label>
                         </div>
-                        <div class="form-floating mb-3">
+                        <div class="form-floating">
                             <input type="email" class="form-control input-underline" id="modal-email" name="email"
                                 placeholder="Email" required>
                             <label for="email">Email</label>
@@ -37,8 +37,8 @@
                         <label for="gender">Gender</label>
                     </div>
 
-                    <div class="d-flex flex-row gap-3">
-                        <div class="form-floating mb-3 position-relative">
+                    <div class="d-flex flex-column flex-md-row mb-3 gap-3">
+                        <div class="form-floating position-relative">
                             <input type="password" class="form-control input-underline pe-5" id="password"
                                 name="password" placeholder="Password" required>
                             <label for="password">Password</label>
@@ -49,7 +49,7 @@
                             </button>
                         </div>
 
-                        <div class="form-floating mb-3 position-relative">
+                        <div class="form-floating position-relative">
                             <input type="password" class="form-control input-underline pe-5" id="password_confirmation"
                                 name="password_confirmation" placeholder="Confirm Password" required>
                             <label for="password_confirmation">Confirm Password</label>

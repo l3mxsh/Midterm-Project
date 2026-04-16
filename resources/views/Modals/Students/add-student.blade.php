@@ -9,18 +9,18 @@
             <div class="modal-body">
                 <form method="POST" action="{{ route('student.create') }}">
                     @csrf
-                    <div class="d-flex flex-row gap-3">
-                        <div class="form-floating mb-3">
+                    <div class="d-flex flex-column flex-md-row gap-3 mb-3">
+                        <div class="form-floating">
                             <input type="text" class="form-control input-underline" id="modal-fname" name="fname"
                                 placeholder="First Name" required>
                             <label for="fname">First Name</label>
                         </div>
-                        <div class="form-floating mb-3">
+                        <div class="form-floating">
                             <input type="text" class="form-control input-underline" id="modal-mname" name="mname"
                                 placeholder="Middle Name">
                             <label for="mname">Middle Name</label>
                         </div>
-                        <div class="form-floating mb-3">
+                        <div class="form-floating">
                             <input type="text" class="form-control input-underline" id="modal-lname" name="lname"
                                 placeholder="Last Name" required>
                             <label for="lname">Last Name</label>

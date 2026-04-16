@@ -9,12 +9,12 @@
                 <form method="POST" id="editUserForm">
                     @csrf
                     @method('PUT')
-                    <div class="d-flex flex-row gap-3">
-                        <div class="form-floating mb-3">
+                    <div class="d-flex flex-column flex-md-row mb-3 gap-3">
+                        <div class="form-floating">
                             <input type="text" class="form-control input-underline" id="modal-name" name="name" placeholder="Full Name" required>
                             <label for="modal-name">Full Name</label>
                         </div>
-                        <div class="form-floating mb-3">
+                        <div class="form-floating">
                             <input type="email" class="form-control input-underline" id="modal-email" name="email" placeholder="Email" required>
                             <label for="modal-email">Email</label>
                         </div>

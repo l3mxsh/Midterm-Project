@@ -19,11 +19,7 @@
                 <i class="bi bi-eye"></i>
             </button>
         </div>
-        <button type="submit" class="btn btn-danger w-100 rounded-1 fw-bold mb-2">SIGN IN</button>
+        <button type="submit" class="btn btn-danger w-100 rounded-1 fw-bold my-2">SIGN IN</button>
         <a href="{{ route('register') }}" class="btn btn-outline-danger w-100 rounded-1 fw-bold mb-2">SIGN UP</a>
     </form>
-
-    <div class="text-center mt-2">
-        <a href="#" class="text-danger small">Forgot Password?</a>
-    </div>
 @endsection

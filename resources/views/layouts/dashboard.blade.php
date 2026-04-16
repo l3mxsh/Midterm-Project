@@ -9,9 +9,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
     <title>@yield('title', 'Dashboard')</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.png') }}">
 </head>
 
 <body class="d-flex flex-column min-vh-100">
+
+    <div id="overlay"></div>
+
     <div class="d-flex flex-grow-1">
 
         {{-- Sidebar --}}
@@ -68,9 +72,18 @@
         </div>
 
         {{-- Main Content --}}
-        <div class="d-flex flex-column flex-grow-1 w-100">
+        <div class="d-flex flex-column flex-grow-1 w-100 overflow-hidden">
 
-            <main class="p-4 flex-grow-1">
+            {{-- Mobile Topbar --}}
+            <div class="main-topbar">
+                <button id="mobile-toggle-btn" class="btn p-0 me-3" title="Toggle Sidebar">
+                    <i class="bi bi-list text-white fs-4"></i>
+                </button>
+                <img src="{{ asset('images/white-logo.png') }}" alt="Logo" width="30" class="me-2">
+                <span class="text-white fw-bold">A$T</span>
+            </div>
+
+            <main class="p-3 p-md-4 flex-grow-1">
                 @yield('content')
             </main>
 
@@ -123,7 +136,28 @@
 
         const sidebar = document.getElementById('sidebar');
         const toggleBtn = document.getElementById('toggle-btn');
-        toggleBtn.addEventListener('click', () => sidebar.classList.toggle('collapsed'));
+        const mobileToggleBtn = document.getElementById('mobile-toggle-btn');
+        const overlay = document.getElementById('overlay');
+        const isMobile = () => window.innerWidth <= 768;
+
+        toggleBtn.addEventListener('click', () => {
+            if (isMobile()) {
+                sidebar.classList.toggle('mobile-open');
+                overlay.classList.toggle('show');
+            } else {
+                sidebar.classList.toggle('collapsed');
+            }
+        });
+
+        mobileToggleBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('mobile-open');
+            overlay.classList.toggle('show');
+        });
+
+        overlay.addEventListener('click', () => {
+            sidebar.classList.remove('mobile-open');
+            overlay.classList.remove('show');
+        });
 
         document.querySelectorAll('.toggle-password').forEach(btn => {
             btn.addEventListener('click', () => {

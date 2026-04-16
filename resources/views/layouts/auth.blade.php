@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>@yield('title', 'Auth')</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.png') }}">
 </head>
 
 <body class="d-flex align-items-center justify-content-center min-vh-100">
 
-    <div class="card p-4 shadow w-25" >
+    <div class="card p-4 m-3 shadow w-100" style="max-width: 420px;">
         <div class="text-center mb-3">
             <img src="{{ asset('images/logo.png') }}" alt="Logo" width="60" class="mb-2">
             <h6 class="fw-bold text-danger">A$T</h6>
@@ -48,10 +49,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
-   <script>
+    <script>
         document.querySelectorAll('.toast').forEach(el => {
             new bootstrap.Toast(el, {
-                delay: 1000
+                delay: 3000
             }).show();
         });
 

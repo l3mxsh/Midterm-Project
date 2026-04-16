@@ -10,18 +10,18 @@
                 <form method="POST" id="studentEditForm">
                     @csrf
                     @method('PUT')
-                    <div class="d-flex flex-row gap-3">
-                        <div class="form-floating mb-3">
+                    <div class="d-flex flex-column flex-md-row gap-3 mb-3">
+                        <div class="form-floating">
                             <input type="text" class="form-control input-underline" id="modal-fname" name="fname"
                                 placeholder="First Name" required>
                             <label for="fname">First Name</label>
                         </div>
-                        <div class="form-floating mb-3">
+                        <div class="form-floating">
                             <input type="text" class="form-control input-underline" id="modal-mname" name="mname"
                                 placeholder="Middle Name">
                             <label for="mname">Middle Name</label>
                         </div>
-                        <div class="form-floating mb-3">
+                        <div class="form-floating">
                             <input type="text" class="form-control input-underline" id="modal-lname" name="lname"
                                 placeholder="Last Name" required>
                             <label for="lname">Last Name</label>
@@ -44,8 +44,8 @@
                             <label for="gender">Gender</label>
                         </div>
                         <div class="form-floating">
-                            <input type="number" class="form-control input-underline" id="modal-age" name="age" min="18" max="100"
-                                placeholder="Age" required>
+                            <input type="number" class="form-control input-underline" id="modal-age" name="age" min="18"
+                                max="100" placeholder="Age" required>
                             <label for="age">Age</label>
                         </div>
                     </div>
@@ -81,18 +81,18 @@
     </div>
 </div>
 @push('scripts')
-<script>
-    document.getElementById('studentEditModal').addEventListener('show.bs.modal', function (e) {
-        const button = e.relatedTarget;
-        const id = button.getAttribute('data-id');
-        document.getElementById('modal-fname').value = button.getAttribute('data-fname');
-        document.getElementById('modal-mname').value = button.getAttribute('data-mname');
-        document.getElementById('modal-lname').value = button.getAttribute('data-lname');
-        document.getElementById('modal-age').value = button.getAttribute('data-age');
-        document.getElementById('modal-address').value = button.getAttribute('data-address');
-        document.getElementById('modal-gender').value = button.getAttribute('data-gender');
-        document.getElementById('modal-program').value = button.getAttribute('data-program');
-        document.getElementById('studentEditForm').action = `/dashboard/student/${id}`;
-    });
-</script>
+    <script>
+        document.getElementById('studentEditModal').addEventListener('show.bs.modal', function (e) {
+            const button = e.relatedTarget;
+            const id = button.getAttribute('data-id');
+            document.getElementById('modal-fname').value = button.getAttribute('data-fname');
+            document.getElementById('modal-mname').value = button.getAttribute('data-mname');
+            document.getElementById('modal-lname').value = button.getAttribute('data-lname');
+            document.getElementById('modal-age').value = button.getAttribute('data-age');
+            document.getElementById('modal-address').value = button.getAttribute('data-address');
+            document.getElementById('modal-gender').value = button.getAttribute('data-gender');
+            document.getElementById('modal-program').value = button.getAttribute('data-program');
+            document.getElementById('studentEditForm').action = `/dashboard/student/${id}`;
+        });
+    </script>
 @endpush
